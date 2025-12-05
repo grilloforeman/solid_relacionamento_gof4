@@ -82,4 +82,19 @@ echo "Área do retângulo: " . $rect->area() . PHP_EOL;   // 50
 echo "Área do círculo: " . $circle->area() . PHP_EOL;   // ~28.27
 echo "Área do quadrado: " . $square->area() . PHP_EOL;  // 16
 
-'''
+#RESPOSTA DA IA
+##Como isso aplica SRP e OCP
+• 	SRP (Single Responsibility Principle)
+• 	Cada classe (, , ) tem uma única responsabilidade: calcular área da sua forma.
+• 	A classe  tem uma única responsabilidade: criar objetos.
+• 	Nenhuma classe mistura responsabilidades.
+• 	OCP (Open/Closed Principle)
+• 	O sistema está aberto para extensão: basta criar uma nova classe que implemente  (ex.: ).
+• 	Está fechado para modificação: funções que usam  não precisam ser alteradas.
+• 	O Factory pode ser estendido para suportar novos tipos sem quebrar código existente.
+
+## Ganhos práticos em PHP
+• 	Organização: separa criação de objetos da lógica de negócio.
+• 	Extensibilidade: novos tipos de  podem ser adicionados sem alterar código cliente.
+• 	Testabilidade: cada classe pode ser testada isoladamente.
+• 	Manutenção: responsabilidades bem definidas reduzem acoplamento e bugs lógicos.
