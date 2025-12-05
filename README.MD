@@ -117,9 +117,13 @@ echo "Área do quadrado: " . $square->area() . PHP_EOL;  // 16
 
 ## Relação com SRP
 • 	SRP (Single Responsibility Principle):
+
 • 	Cada classe (, , ) tem uma única responsabilidade: calcular área.
+
 • 	O  tem uma única responsabilidade: criar objetos.
+
 • 	O cliente () tem uma única responsabilidade: usar os objetos.
+
 • 	Separar responsabilidades torna o sistema mais limpo e fácil de manter.
 
 ## Relação com OCP
@@ -131,14 +135,20 @@ echo "Área do quadrado: " . $square->area() . PHP_EOL;  // 16
 
 ## Agregação vs Composição
 • 	Agregação: quando uma classe usa outra, mas sem relação de “vida ou morte”. Exemplo: um  que recebe um  para imprimir.
+
 • 	Composição: quando uma classe contém outra como parte essencial. Exemplo:  contendo um  dentro ().
+
 • 	Nos exemplos que vimos:
+
 • 	O Factory e as interfaces são mais agregação (um objeto usa outro).
+
 • 	Quando colocamos uma  dentro de outra ( com ), isso é composição.
 
 #### Conclusão FICA PROXIMO O QUE EU FALEI OLHA BEM
 • 	O uso de injeção de dependência (via Factory + interface) aproxima muito do SOLID, especialmente SRP e OCP.
+
 • 	Os exemplos até agora são uma mistura de agregação (objetos colaborando) e composição (um objeto contendo outro).
+
 • 	Essa separação de responsabilidades e abstrações é o que dá flexibilidade e evita os erros lógicos que discutimos com Liskov.
 
 
@@ -146,52 +156,81 @@ echo "Área do quadrado: " . $square->area() . PHP_EOL;  // 16
  ##Relação com técnicas
 ### Injeção de Dependência (DI)
 - É uma forma de aplicar SRP: separa quem cria objetos de quem usa.
+
 - Também ajuda no OCP: você injeta abstrações (interfaces), e pode trocar implementações sem alterar o código cliente.
+
 - Exemplo: em PHP ou Go, você injeta um Shape na função PrintArea, sem saber se é Rectangle ou Circle.
+
 👉 DI é um mecanismo que reforça SRP e OCP.
 
 ### Composição
 - É uma forma de aplicar SRP: cada struct tem seus dados e responsabilidades, e você compõe comportamentos em vez de herdar.
+
 - Também ajuda no OCP: você pode adicionar novos componentes sem alterar os existentes.
+
 - Exemplo: Square contém um Rectangle (composição), mas redefine sua lógica de área.
+
 👉 Composição é uma estratégia estrutural que favorece SRP e OCP.
 
 ### Agregação
+
 - É uma forma mais fraca de composição: um objeto usa outro, mas não depende dele para existir.
+
 - Também pode ajudar no SRP (separando responsabilidades) e no OCP (permitindo extensão).
+
 - Exemplo: um Printer que recebe um Shape para imprimir. O Printer não “possui” o Shape, apenas usa.
+
 👉 Agregação é uma relação de uso, que pode apoiar SRP e OCP.
 
 ## Qual é o mais certo?
+
 - Nenhum isolado é “o certo”.
+
 - SRP e OCP são princípios de design.
+
 - DI, composição e agregação são técnicas que ajudam a aplicar esses princípios.
+
 👉 O mais correto é dizer:
+
 - SRP e OCP não são DI nem composição.
+
 - Mas DI, composição e agregação são ferramentas que tornam mais fácil cumprir SRP e OCP.
 
 ## Conclusão
 - SRP/OCP = princípios (o “porquê”).
+
 - DI, composição, agregação = técnicas (o “como”).
+
 - O design ideal usa interfaces + DI + composição para aplicar SRP e OCP de forma natural, sem cair em erros lógicos como vimos no Liskov.
 
 
 ### Relação com SRP
 - SRP (Single Responsibility Principle) diz que cada classe/módulo deve ter um único motivo para mudar.
+
 - O Factory Method separa a responsabilidade de criação da responsabilidade de uso.
+
 - Assim, quem usa o objeto não precisa se preocupar com como ele é criado.
+
 - Exemplo: ShapeFactory só cria objetos, Rectangle só calcula área, Printer só imprime. Cada um com uma responsabilidade única → SRP aplicado.
 
 ### Relação com OCP
+
 - OCP (Open/Closed Principle) diz que o sistema deve estar aberto para extensão e fechado para modificação.
+
 - Com Factory Method, você pode adicionar novos tipos (Triangle, Polygon) sem alterar o código cliente que já usa a interface Shape.
+
 - O cliente continua chamando ShapeFactory::create("triangle"), sem precisar mudar sua lógica.
+
 - Isso é OCP: você estende o sistema com novas classes, mas não modifica o código existente.
 
 ### Conclusão OLHA DE NOVO FICA PROXIMO OPSS. NOSSA EU NAO VE
+
 - O Factory Method não é SRP nem OCP, mas é um meio de aplicar esses princípios:
+
 - SRP → separa responsabilidades (criação vs uso).
+
 - OCP → permite extensão sem modificar código cliente.
+
 - Por isso, podemos dizer que o Factory Method fica muito próximo de SRP e OCP, porque ele naturalmente reforça esses princípios.
 
 
