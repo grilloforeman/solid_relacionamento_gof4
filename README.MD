@@ -85,7 +85,9 @@ echo "Área do círculo: " . $circle->area() . PHP_EOL;   // ~28.27
 echo "Área do quadrado: " . $square->area() . PHP_EOL;  // 16
 ```
 #RESPOSTA DA IA
-##Como isso aplica SRP e OCP
+
+
+# Como isso aplica SRP e OCP
 • 	SRP (Single Responsibility Principle)
 • 	Cada classe (, , ) tem uma única responsabilidade: calcular área da sua forma.
 • 	A classe  tem uma única responsabilidade: criar objetos.
