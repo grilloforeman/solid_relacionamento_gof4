@@ -1,3 +1,13 @@
+# BEM GRANDE ESSA COISA DE RELACAO DO SOLID COM OS CRIACIONAIS AINDA E BEM VALIDA
+VALEU OTARIOS FUI.. REALMENTE EXISTE E TALVEZ SEJA BASE ATE PARA UMA MUDANCA
+CASOI SEJA NECESSARIO. VLW FUI.
+
+
+
+
+
+
+
 ## Explicacao
 O objetivo e somente demonstrar uma relacao dO SOLID COM GOF4 NOS CRIACONAIS,
 e detalhando e com uso de IA e eu conferindo agora realmente a base de codigo
