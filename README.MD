@@ -164,6 +164,32 @@ echo "Área do quadrado: " . $square->area() . PHP_EOL;  // 16
 - O design ideal usa interfaces + DI + composição para aplicar SRP e OCP de forma natural, sem cair em erros lógicos como vimos no Liskov.
 
 
+### Relação com SRP
+- SRP (Single Responsibility Principle) diz que cada classe/módulo deve ter um único motivo para mudar.
+- O Factory Method separa a responsabilidade de criação da responsabilidade de uso.
+- Assim, quem usa o objeto não precisa se preocupar com como ele é criado.
+- Exemplo: ShapeFactory só cria objetos, Rectangle só calcula área, Printer só imprime. Cada um com uma responsabilidade única → SRP aplicado.
+
+### Relação com OCP
+- OCP (Open/Closed Principle) diz que o sistema deve estar aberto para extensão e fechado para modificação.
+- Com Factory Method, você pode adicionar novos tipos (Triangle, Polygon) sem alterar o código cliente que já usa a interface Shape.
+- O cliente continua chamando ShapeFactory::create("triangle"), sem precisar mudar sua lógica.
+- Isso é OCP: você estende o sistema com novas classes, mas não modifica o código existente.
+
+### Conclusão OLHA DE NOVO FICA PROXIMO OPSS. NOSSA EU NAO VE
+- O Factory Method não é SRP nem OCP, mas é um meio de aplicar esses princípios:
+- SRP → separa responsabilidades (criação vs uso).
+- OCP → permite extensão sem modificar código cliente.
+- Por isso, podemos dizer que o Factory Method fica muito próximo de SRP e OCP, porque ele naturalmente reforça esses princípios.
+
+
+´´´´ 
+##OLHA UMA RESPOSTA PARA TODOS OS OTARIOS DA ALURA E OS HACKER SEILA O QUE
+EU ESTOU DESENVOLVENDO AINDA CARA, POR ISSO ESTA AQUI. MAIS UMA COISA EU NAO FALO COM ALGUEM QUE NAO CRIOU NADA
+E NINGUEM ESCUTA FICA A DICA PARA OS CAMARADAS SEIAL OQ UE.. LEGAL AI MUDEI MELHOREIS CORRIGI PRONTO MESMA BOSTA
+SENDO CRIADA.
+´´´
+
 
 
 
