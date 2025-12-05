@@ -72,6 +72,8 @@ class ShapeFactory {
         };
     }
 }
+```
+
 
 // Uso
 $rect = ShapeFactory::create('rectangle', 5, 10);
